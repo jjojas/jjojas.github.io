@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col gap-8 lg:gap-8">
     <div class="flex flex-col lg:flex-row gap-8">
-      <div class="lg:w-5/6 bg-slate-100 rounded-xl border-0 lg:p-8 p-4 flex flex-col justify-between gap-2 lg:h-[30rem] h-96">
+      <div class="lg:w-full bg-slate-100 rounded-xl border-0 lg:py-8 px-8 pt-16 pb-8 flex flex-col justify-between gap-2 lg:h-[48rem] h-content">
         <div class="text-container">
-        <p class="lg:text-4xl text-2xl text-gray-700 font-bold mb-5 text-left">
-          Hello, It’s Jee here! I am an aspiring Jr. product designer.
+        <p class="lg:text-8xl text-4xl text-gray-700 font-bold mb-5 text-left">
+          Hello, It’s <span class="text-blue-600">Jee</span> here! I am an aspiring Jr. product designer.
         </p>
-        <p class="lg:text-xl text-gray-500 text-md text-left">
+        <p class="lg:text-4xl text-gray-500 text-xl text-left">
           Crafting a digital product have been the biggest part of my life. The feeling of knowing that things I create can make a positive impact in someone’s life is a dream come true. I am a learner, a tinkerer, and always looks forward to new challenges.
         </p>
         </div>
-        <div class="flex flex-row gap-1 lg:gap-2 flex-wrap content-start">
+        <div class="flex flex-row gap-1 lg:gap-2 flex-wrap content-start lg:my-0 my-4">
           <a type="button" href="mailto:justindermawanikhsan@gmail.com" class="transition ease-in-out duration-300 hover:scale-105 rounded-full flex flex-row gap-2 bg-blue-600 text-white py-2 px-4 lg:text-lg">
             Contact Me
           </a>
@@ -25,7 +25,7 @@
           </a>
         </div>
       </div>
-      <div class="lg:w-1/6 bg-gradient-to-bl from-sky-500 to-indigo-500 rounded-xl border-0 lg:p-8 p-4 flex flex-col justify-between gap-2 lg:h-[30rem] h-96 lg:block hidden">
+      <div class="lg:w-1/3 bg-gradient-to-bl from-sky-500 to-indigo-500 rounded-xl border-0 lg:p-8 p-4 flex flex-col justify-between gap-2 lg:h-[48rem] h-96 lg:block hidden">
         <div class="text-container">
         <p class="text-2xl text-white font-semibold mb-5 text-left">
           That's me!

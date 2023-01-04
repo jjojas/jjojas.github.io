@@ -1,21 +1,26 @@
 <template>
-  <div class="flex flex-col gap-8 lg:gap-8">
-    <div class="flex flex-col lg:flex-row gap-8"
-      v-for="portfolios in splitPortfolios"
-      :key="portfolios"
-      >
-      <PortfolioCard
-      v-for="p in portfolios"
-      :key="p.id"
-      :title="p.title"
-      :description="p.description"
-      :chip="p.chip"
-      :target="p.target"
-      :image="p.image"
-      :gradient="p.gradient"
-      />
+ <div class="">
+    <h1 class="text-4xl text-gray-700 font-bold mb-5 text-left">
+      Product Design
+    </h1>
+    <div class="flex flex-col gap-8 lg:gap-8">
+      <div class="flex flex-col lg:flex-row gap-8"
+        v-for="portfolios in splitPortfolios"
+        :key="portfolios"
+        >
+        <PortfolioCard
+        v-for="p in portfolios"
+        :key="p.id"
+        :title="p.title"
+        :description="p.description"
+        :chip="p.chip"
+        :target="p.target"
+        :image="p.image"
+        :gradient="p.gradient"
+        />
+      </div>
     </div>
-  </div>
+ </div>
 </template>
 
 <script>

@@ -7,7 +7,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Home',
+      title: 'Home | Portfolio Jee ',
      }
   },
   {
@@ -15,7 +15,7 @@ const routes = [
     name: 'Portfolio',
     component: () => import('../pages/Portfolio.vue'),
     meta: {
-      title: 'Portfolio',
+      title: 'Portfolio | Portfolio Jee',
      }
   },
   {
@@ -23,7 +23,7 @@ const routes = [
     name: 'Blog',
     component: () => import('../pages/Blog.vue'),
     meta: {
-      title: 'Blog',
+      title: 'Blog | Portfolio Jee',
      }
   }
 ]

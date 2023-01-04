@@ -1,5 +1,9 @@
 <template>
-  <h1 class="text-lg text-left">Blog</h1>
+  <div class="">
+    <h1 class="text-4xl text-gray-700 font-bold mb-5 text-left">
+      Blog
+    </h1>
+  </div>
 </template>
 
 <script>
