@@ -50,8 +50,8 @@ function updateCounter() {
     const now = new Date();
     const { years, months, days, hours, minutes, seconds } = calculateElapsedTime(startDate, now);
 
-    yearsMonthsDaysElement.textContent = `${years} tahun, ${months} bulan, ${days} hari.`;
-    hoursMinutesSecondsElement.textContent = `${hours} jam, ${minutes} menit, ${seconds} detik.`;
+    yearsMonthsDaysElement.textContent = `🗓️ ${years} tahun, ${months} bulan, ${days} hari.`;
+    hoursMinutesSecondsElement.textContent = `🕰️ ${hours} jam, ${minutes} menit, ${seconds} detik.`;
 }
 
 setInterval(updateCounter, 1000);
@@ -59,3 +59,4 @@ updateCounter();
 
 
 //////
+
