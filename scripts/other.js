@@ -109,7 +109,7 @@ function submitPin() {
 
 // Placeholder for the check function
 const isLocked = true;
-const PIN = isLocked ? "171201" : "000000";
+const PIN = isLocked ? "161201" : "000000";
 const lockerContainer = document.querySelector('.locked');
 const desktopContainer = document.querySelector('.desktop');
 
