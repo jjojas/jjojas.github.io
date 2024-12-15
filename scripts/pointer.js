@@ -124,6 +124,37 @@ initializeCustomPointer({
 initializeCustomPointer({
   containerSelector: '.goal',
   pointerId: 'pointer-goal',
+  onClick: (event, customPointer) => {
+    const targetGlow = document.getElementById("goal-glow");
+    const howLong= 0.5;
+    
+    // Wrap each character of the targetGlow text in a <span> element
+    const text = targetGlow.textContent; // Get the text content
+    targetGlow.innerHTML = ''; // Clear the existing text
+
+    // Wrap each character in a <span> tag
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = text[i];
+      targetGlow.appendChild(span);
+    }
+    // Add wave animation effect for bold text
+    const spans = targetGlow.querySelectorAll('span');
+    spans.forEach((span, index) => {
+      span.style.animation = `boldWave ${howLong}s ease forwards ${index * 0.05}s`; // Apply delay for each character
+    });
+
+
+    // Add glowing effect
+    targetGlow.classList.add('glowing-pointer');
+    
+
+    // Remove glowing effect and reset after 2 seconds
+    setTimeout(() => {
+      targetGlow.classList.remove('glowing-pointer');
+      spans.forEach(span => span.style.animation = ''); // Reset animation
+    }, 1000*howLong*text.length);
+  },
 });
 
 initializeCustomPointer({
@@ -165,4 +196,50 @@ initializeCustomPointer({
 initializeCustomPointer({
   containerSelector: '.end',
   pointerId: 'pointer-end',
+  
+  onClick: (event, customPointer) => {
+    const container = document.querySelector('.end');
+    
+    // Set how many numbers to spawn
+    const numberOfElements = 10; // You can change this to any number you want to spawn on each click
+    const spawnDelay = 200; // Delay in ms between each spawn, change this value to control delay
+
+    // Get the container's position relative to the viewport
+    const containerRect = container.getBoundingClientRect();
+
+    // Spawn multiple numbers with delay
+    for (let i = 0; i < numberOfElements; i++) {
+      // Set delay for each spawn
+      setTimeout(() => {
+        // Generate random offset for the "23" element within the container bounds
+        const randomX = Math.random() * (containerRect.width - 32); // 32 is the width of the "23" element
+        const randomY = Math.random() * (containerRect.height - 32); // 32 is the height of the "23" element
+
+        const offsetY = randomY + (11 * window.innerHeight);
+
+        // Generate a random color for the "23"
+        const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`; // Random color using HSL
+
+        // Randomize the font size (between 12px and 48px)
+        const randomFontSize = Math.random() * 36 + 12 + 'px'; // Random size between 12px and 48px
+
+        // Randomize the font weight (300 to 900)
+        const randomFontWeight = Math.floor(Math.random() * 600) + 300; // Random weight between 300 and 900
+
+        // Create the "23" element
+        const numberElement = document.createElement('div');
+        numberElement.textContent = "23";
+        numberElement.style.position = 'absolute';
+        numberElement.style.left = `${randomX}px`; // Position relative to the container
+        numberElement.style.top = `${offsetY}px`; // Position relative to the container
+        numberElement.style.fontSize = randomFontSize; // Randomize the font size
+        numberElement.style.fontWeight = randomFontWeight; // Randomize the font weight
+        numberElement.style.color = randomColor; // Apply the random color
+        numberElement.style.transition = 'none'; // No transition for color or opacity
+
+        // Append the element to the container
+        container.appendChild(numberElement);
+      }, i * spawnDelay); // Apply delay, multiply by index to stagger the spawns
+    }
+  }
 });

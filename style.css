@@ -535,3 +535,35 @@ button {
       opacity: 0;
   }
 }
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.glowing-pointer {
+  animation: glow 1.5s infinite;
+}
+
+@keyframes boldWave {
+  0% {
+    font-weight: normal;
+  }
+  50% {
+    font-weight: bold; /* Make the character bold */
+  }
+  100% {
+    font-weight: normal;
+  }
+}
+
+.end {
+  overflow: hidden;
+}
