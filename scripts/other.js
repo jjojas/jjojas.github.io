@@ -60,3 +60,96 @@ updateCounter();
 
 //////
 
+const healthEmojis = [
+    "💪", "🩺", "💉", "🩻", "🥦", "🍎", "🥕", "🏃‍♂️", "💚", "🧘‍♀️", "🍇", "🥗"
+  ];
+  
+const heartEmojis = [
+"❤️", "🧡", "💛", "💚", "💙", "💜", "🖤",
+];
+  
+  // Function to update health emoji
+  function updateEmoji() {
+
+    const randomHealth = healthEmojis[Math.floor(Math.random() * healthEmojis.length)];
+    document.getElementById("health").textContent = randomHealth;
+
+    const randomHeart = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+    document.getElementById("heart").textContent = randomHeart;
+  }
+  
+  // Call both functions every second
+  setInterval(updateEmoji, 1000);
+
+  ////
+
+  function changeDigit(index, increment) {
+    let digitElement = document.getElementById(`digit-${index}`);
+    let currentValue = parseInt(digitElement.textContent);
+    let newValue = currentValue + increment;
+
+    if (newValue < 0) {
+        newValue = 9;
+    } else if (newValue > 9) {
+        newValue = 0;
+    }
+
+    digitElement.textContent = newValue;
+}
+
+// Function to handle submit button click
+function submitPin() {
+    let pin = '';
+    for (let i = 0; i < 6; i++) {
+        pin += document.getElementById(`digit-${i}`).textContent;
+    }
+
+    check(pin); // Call the check function with the PIN value
+}
+
+// Placeholder for the check function
+const isLocked = true;
+const PIN = isLocked ? "161201" : "000000";
+const lockerContainer = document.querySelector('.locked');
+const desktopContainer = document.querySelector('.desktop');
+
+function check(pin) {
+    console.log('Checking PIN:', pin);
+    if (pin == PIN){
+        lockerContainer.style.display = "none";
+        desktopContainer.style.display = "block";
+    } else {
+        alert('PIN salah nih');
+    }
+}
+
+//////////
+
+const moneyContainer = document.querySelector('.money');
+const howManyMoney = 10;
+
+moneyContainer.addEventListener('click', function () {
+    const containerRect = moneyContainer.getBoundingClientRect();
+    const moneyEmojis = ['💰', '💵', '💴', '💶', '💷', '💎', '🤑', '💸'];
+    for (let i = 0; i < howManyMoney; i++) {
+        const emoji = document.createElement('div');
+        emoji.classList.add('emoji');
+
+        const randomEmoji = moneyEmojis[Math.floor(Math.random() * moneyEmojis.length)];
+        emoji.textContent = randomEmoji;
+
+        // Randomize starting position within the div
+        const randomX = Math.random() * containerRect.width;
+        const randomY = Math.random() * containerRect.height;
+        emoji.style.left = `${randomX}px`;
+        emoji.style.top = `${randomY}px`;
+
+        // Add the emoji to the div
+        moneyContainer.appendChild(emoji);
+
+        // Remove the emoji after 10 seconds
+        // setTimeout(() => {
+        //     emoji.remove();
+        // }, 10000);
+    }
+});

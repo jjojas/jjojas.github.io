@@ -16,9 +16,48 @@
       </div>
     </div>
   </div>
-  
+  <div class="locked">
+    <div class="container">
+    <p><i>please enter password</i></p>
+    <div class="password-container">
+      <div class="pin-container">
+        <div class="digit-container">
+            <span class="arrow" onclick="changeDigit(0, 1)">↑</span>
+            <span class="digit" id="digit-0">0</span>
+            <span class="arrow" onclick="changeDigit(0, -1)">↓</span>
+        </div>
+        <div class="digit-container">
+            <span class="arrow" onclick="changeDigit(1, 1)">↑</span>
+            <span class="digit" id="digit-1">0</span>
+            <span class="arrow" onclick="changeDigit(1, -1)">↓</span>
+        </div>
+        <div class="digit-container">
+            <span class="arrow" onclick="changeDigit(2, 1)">↑</span>
+            <span class="digit" id="digit-2">0</span>
+            <span class="arrow" onclick="changeDigit(2, -1)">↓</span>
+        </div>
+        <div class="digit-container">
+            <span class="arrow" onclick="changeDigit(3, 1)">↑</span>
+            <span class="digit" id="digit-3">0</span>
+            <span class="arrow" onclick="changeDigit(3, -1)">↓</span>
+        </div>
+        <div class="digit-container">
+            <span class="arrow" onclick="changeDigit(4, 1)">↑</span>
+            <span class="digit" id="digit-4">0</span>
+            <span class="arrow" onclick="changeDigit(4, -1)">↓</span>
+        </div>
+        <div class="digit-container">
+            <span class="arrow" onclick="changeDigit(5, 1)">↑</span>
+            <span class="digit" id="digit-5">0</span>
+            <span class="arrow" onclick="changeDigit(5, -1)">↓</span>
+        </div>
+    </div>
+    <button class="submit-btn" onclick="submitPin()">Submit</button>
+    </div>
+    </div>
+  </div>
   <div class="desktop">
-    <div class="hero" style="cursor: none;">
+    <div class="hero">
       <div class="dot">
         <div class="ripple"></div>
       </div>
@@ -36,6 +75,7 @@
       <p style="font-size: 10px;"><i>(p.s click (spam!))</i></p>
     </div>
     <div class="time">
+      <div class="custom-pointer" id="pointer-time">🗓️</div>
       <div class="container">
         <i>di desember ada cinta.</i>
         <p style="font-size: 10px;"><i>(p.s move your pointer)</i></p>
@@ -43,97 +83,115 @@
       <div class="boxes">
         <div class="box">
           <div class="item">
-            <img src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?auto=format&fit=crop&q=80&w=2579&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+            <img src="./pics/Image-1.png" alt="Image">
         </div>
         </div>
         <div class="box">
           <div class="item">
-            <img src="https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+            <img src="./pics/Image-2.png" alt="Image">
         </div>
         </div>
         <div class="box">
           <div class="item">
-            <img src="https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&q=80&w=2893&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+            <img src="./pics/Image-3.png" alt="Image">
         </div>
         </div>
         <div class="box">
           <div class="item">
-            <img src="https://images.unsplash.com/photo-1519255122284-c3acd66be602?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+            <img src="./pics/Image-4.png" alt="Image">
         </div>
         </div>
         <div class="box">
           <div class="item">
-            <img src="https://images.unsplash.com/photo-1505782388-8632b3423dbb?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+            <img src="./pics/Image-5.png" alt="Image">
         </div>
         </div>
       </div>
     </div>
     <div class="spotify">
+      <div class="custom-pointer" id="pointer-spotify">🎹</div>
       <div class="container">
         <p><i>di desember ada nada.</i></p>
-        <p style="font-size: 10px;"><i>(p.s click to reveal)</i></p>
+        <p style="font-size: 10px;"><i>(p.s click outside to reveal)</i></p>
         <div class="blurs">
           <iframe style="padding-top: 8px;border-radius:12px" src="https://open.spotify.com/embed/playlist/5ZLbykYETHZRUlyKgRl9iW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </div>
-    <div class="subtitle-w">
+    <div class="subtitle-w love">
+      <div class="custom-pointer" id="pointer-love">❤️</div>
       <div class="container">
-        selamat, <i>cinta.</i><br>
+        selamat, <i>cinta</i> <span id="heart">❤️</span>.<br>
         selamat tumbuh dewasa.
+        <p style="font-size: 10px;"><i>(p.s click to grow your love)</i></p>
       </div>
     </div>
     <div class="subtitle-b countdown">
+      <div class="custom-pointer" id="pointer-countdown">🕚</div>
       <div class="container">
         <div class="from-me">
-          <p>hari ini kamu <i>tumbuh</i>.<br>sungguh tidak terasa.</p>
+          <p>hari ini kamu <i>tumbuh</i>.<br>sudah usia berapa?</p>
         </div>
       <div class="from-them">
         <p class="years-months-days">🗓️ 23 tahun, 0 bulan, 0 hari, </p>
         <p class="hours-minutes-seconds">🕰️ 0 jam, 0 menit, 0 detik.</p>
       </div>
+      <div class="from-me">
+        <p>sungguh waktu tidak terasa.</p>
+      </div>
+      <p style="font-size: 10px;"><i>(p.s click to move time)</i></p>
     </div>
     </div>
-    <div class="subtitle-w supertext">
+    <div class="subtitle-w health">
+      <div class="custom-pointer" id="pointer-health">💪</div>
       <div class="container">
-        semoga kamu sehat <i>jiwa raga</i>.
+        semoga kamu sehat <i>jiwa raga </i><span id="health">❤️</span>.
+        <p style="font-size: 10px;"><i>(p.s click to flex your muscle)</i></p>
       </div>
     </div>
-    <div class="subtitle-b">
+    <div class="subtitle-b money">
       <div class="container">
         semoga kamu <i>kaya</i>.<br>
         semoga kamu <i>jaya</i>.
+        <p style="font-size: 10px;"><i>(p.s click to make it rain)</i></p>
       </div>
     </div>
-    <div class="subtitle-w">
+    <div class="subtitle-w adult">
+      <div class="custom-pointer" id="pointer-adult">⬆️</div>
       <div class="container">
-        selamat mendewasa<br>
-        selamat menggapai <i>asa</i>.
+        selamat menjadi dewasa.<br>
+        selamat menyusuri <i>masa</i>.
+        <p style="font-size: 10px;"><i>(p.s udah tau kan bisa ngapain)</i></p>
       </div>
     </div>
-    <div class="subtitle-b">
+    <div class="subtitle-b thanks">
+      <div class="custom-pointer" id="pointer-thanks">😚</div>
       <div class="container">
         terima kasih sudah <i>hadir</i> dan <i>mencinta</i>.
       </div>
     </div>
-    <div class="subtitle-w">
+    <div class="subtitle-w goal">
+      <div class="custom-pointer" id="pointer-goal">🎯</div>
       <div class="container">
         semoga kamu dapat menggapai <i>cita</i>.
       </div>
     </div>
-    <div class="subtitle-b">
+    <div class="subtitle-b age">
+      <div class="custom-pointer" id="pointer-age">🥳</div>
       <div class="container">
         sekali lagi selamat, <i>cinta</i>.<br>
         selamat dua tiga.<br>
         semoga kamu bahagia.
       </div>
     </div>
-    <div class="subtitle-w">
+    <div class="subtitle-w end">
+      <div class="custom-pointer" id="pointer-end" style="background-color: black;width: fit-content;height: fit-content; padding: 8px; border-radius: 50%;font-size: 16px;text-align: center">23</div>
       <div class="container">
         di desember yang <i>bercerita</i>.
       </div>
     </div>
   </div>
+  <script src="scripts/pointer.js"></script>
   <script src="scripts/hero.js"></script>
   <script src="scripts/time.js"></script>
   <script src="scripts/other.js"></script>

@@ -1,6 +1,9 @@
 body{
     background-color: #000;
     font-family: 'Inter', sans-serif;
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
 }
 
 
@@ -40,27 +43,31 @@ body{
   }
 }
 
+.health{
+  overflow: hidden;
+}
+
 .hero, .spotify {
   background-image: 
   linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
   linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-background-size: 40px 40px;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-size: 40px;
-    color: white;
-    flex-direction: column;
-  }
+  background-size: 40px 40px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 40px;
+  color: white;
+  flex-direction: column;
+}
 
 
-  .blurs {
-    filter: blur(10px);
-    width: 140%;
-  }
+.blurs {
+  filter: blur(10px);
+  width: 140%;
+}
   
   .hero .container {
     display: flex;
@@ -157,7 +164,7 @@ background-size: 40px 40px;
   }
 
   
-  .subtitle-b .container {
+  .subtitle-b .container, .locked .container {
     z-index: 2;
     text-align: center;
     position: absolute;
@@ -168,7 +175,7 @@ background-size: 40px 40px;
   .countdown .container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
   }
   
   .time .boxes{
@@ -195,7 +202,7 @@ background-size: 40px 40px;
     height: auto;
     overflow: hidden;
 
-    filter: grayscale(100%); /* Convert the image to black and white */
+    filter: grayscale(40%); /* Convert the image to black and white */
     object-fit: cover; /* Crop the image to fit the container while maintaining its aspect ratio */
     width: 100%;
     height: 100%;
@@ -330,5 +337,201 @@ background-size: 40px 40px;
     background: black;
     border-bottom-right-radius: 10px;
     -webkit-transform: translate(-30px, -2px);
+  }
+}
+
+.locked {
+  position: fixed;  /* Fixed position to make it cover the entire screen */
+  top: 0;           /* Align to the top */
+  left: 0;          /* Align to the left */
+  width: 100vw;     /* Full viewport width */
+  height: 100vh;    /* Full viewport height */
+  z-index: 9999;    /* Ensure it sits above other elements */
+
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.password-container{
+
+  padding: 20px;
+  border-radius: 20px;
+  background-color:rgba(0,0,0,0.5);
+  border: 1px solid #2B323C;
+  
+  .pin-container {
+    display: flex;
+    gap: 10px;
+}
+
+  .digit-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+  }
+
+  .digit {
+      font-size: 2rem;
+      text-align: center;
+      background-color: #161A22;
+      border-radius: 12px;
+      color: white;
+      padding: 16px 24px;
+      transition: 
+        box-shadow 0.1s ease-in-out,
+        transform 0.1s ease-in-out;
+      box-shadow: 
+        inset 0px -6px 0px -1px #2B323C,
+        inset 0px 6px 0px -6px #2B323C,
+        0px 12px 35px 1px rgba(0,0,0,0.15);
+  }
+
+  .arrow {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: #161A22;
+    border-radius: 12px;
+    color: white;
+    padding: 16px 24px;
+    transition: 
+      box-shadow 0.1s ease-in-out,
+      transform 0.1s ease-in-out;
+    box-shadow: 
+      inset 0px -6px 0px -1px #2B323C,
+      inset 0px 6px 0px -6px #2B323C,
+      0px 12px 35px 1px rgba(0,0,0,0.15),
+      0px 0px 0px 1px #000,
+      0px 0px 0px 2px #2B323C
+      ;
+  }
+
+  .arrow:hover{
+    box-shadow: 
+      inset 0px -6px 0px -1px #2B323C,
+      inset 0px 6px 0px -6px #2B323C,
+      0px 12px 35px 1px rgba(0,0,0,0.15),
+      0px 0px 0px 3px #000,
+      0px 0px 0px 4px #2B323C
+      ;
+  }
+
+  .arrow:active{
+    transform: scale(0.9);
+    box-shadow:
+      inset 0px -6px 0px -6px #2B323C,
+      inset 0px 6px 0px -2px #2B323C,
+      0px 12px 35px 1px rgba(0,0,0,0.15),
+      0px 0px 0px 0px #000,
+      0px 0px 0px 0px #2B323C
+      ;
+  }
+
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  outline: none;
+}
+
+  .submit-btn {
+    margin-top: 20px;
+    background-color: #161A22;
+    border-radius: 12px;
+    color: white;
+    padding: 16px 24px;
+    transition: 
+      box-shadow 0.1s ease-in-out,
+      transform 0.1s ease-in-out;
+    box-shadow: 
+      inset 0px -6px 0px -1px #2B323C,
+      inset 0px 6px 0px -6px #2B323C,
+      0px 12px 35px 1px rgba(0,0,0,0.15),
+      0px 0px 0px 1px #000,
+      0px 0px 0px 2px #2B323C
+      ;
+  }
+
+  .submit-btn:hover{
+    box-shadow: 
+      inset 0px -6px 0px -1px #2B323C,
+      inset 0px 6px 0px -6px #2B323C,
+      0px 12px 35px 1px rgba(0,0,0,0.15),
+      0px 0px 0px 3px #000,
+      0px 0px 0px 4px #2B323C
+      ;
+  }
+
+  .submit-btn:active{
+    transform: scale(0.9);
+    box-shadow:
+      inset 0px -6px 0px -6px #2B323C,
+      inset 0px 6px 0px -2px #2B323C,
+      0px 12px 35px 1px rgba(0,0,0,0.15),
+      0px 0px 0px 0px #000,
+      0px 0px 0px 0px #2B323C
+      ;
+  }
+}
+
+.custom-pointer {
+  position: absolute;
+  font-size: 30px;
+  pointer-events: none; /* Prevent the pointer from interfering with hover or click events */
+  display: none; /* Hide by default */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+#pointer-health{
+  animation: rock 0.5s infinite alternate ease-in-out; /* Rocking animation */
+}
+
+@keyframes rock {
+  0% {
+    transform: translate(-50%, -50%) rotate(-15deg); /* Rotate left */
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(15deg); /* Rotate right */
+  }
+}
+
+.money{
+  position: relative;
+  overflow: hidden;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 24px;
+  animation: moveDown 3s linear forwards, fadeOut 3s linear forwards;
+}
+
+@keyframes moveDown {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(200%);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
   }
 }
